@@ -2,6 +2,7 @@ package model;
 
 import javafx.geometry.Pos;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -14,12 +15,12 @@ public class Map {
 
     MapObject[][] map;
 
-    Position[] waterTiles;
-    Position[] mountainTiles;
-    Position[] castleTiles;
-    Position[] villageTiles;
-    Position[] FiledTiles;
-    Position[] ForestTiles;
+    ArrayList<Position> waterTiles;
+    ArrayList<Position> mountainTiles;
+    ArrayList<Position> castleTiles;
+    ArrayList<Position> villageTiles;
+    ArrayList<Position> FiledTiles;
+    ArrayList<Position> ForestTiles;
 
 
     public Map(int x, int y){
@@ -84,7 +85,7 @@ public class Map {
     }
 
     private void populatePositionFields(){
-
+        
     }
 
     public void updateAll(){
