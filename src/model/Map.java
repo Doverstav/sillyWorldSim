@@ -2,6 +2,7 @@ package model;
 
 import javafx.geometry.Pos;
 
+import java.rmi.UnexpectedException;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -19,8 +20,8 @@ public class Map {
     ArrayList<Position> mountainTiles;
     ArrayList<Position> castleTiles;
     ArrayList<Position> villageTiles;
-    ArrayList<Position> FiledTiles;
-    ArrayList<Position> ForestTiles;
+    ArrayList<Position> fieldTiles;
+    ArrayList<Position> forestTiles;
 
 
     public Map(int x, int y){
@@ -85,7 +86,27 @@ public class Map {
     }
 
     private void populatePositionFields(){
-        
+        for(MapObject[] MOList : map){
+            for(MapObject mo : MOList){
+                FieldType ft = mo.getType();
+                Position p = mo.getPosition();
+                if(ft == FieldType.CASTLE){
+                    castleTiles.add(p);
+                } else if(ft == FieldType.VILLAGE){
+                    villageTiles.add(p);
+                } else if(ft == FieldType.FIELD){
+                    fieldTiles.add(p);
+                } else if(ft == FieldType.FOREST){
+                    forestTiles.add(p);
+                } else if(ft == FieldType.MOUNTAIN){
+                    mountainTiles.add(p);
+                } else if(ft == FieldType.WATER){
+                    waterTiles.add(p);
+                } else {
+                    throw new Error("Unexpected FieldType" + ft);
+                }
+            }
+        }
     }
 
     public void updateAll(){
