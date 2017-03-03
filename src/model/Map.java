@@ -47,6 +47,11 @@ public class Map {
     Fill with forests
      */
     private void fillMap(){
+        for(int x = 0; x < map.length; x++){
+            for(int y = 0; y < map[x].length; y++){
+                map[x][y] = new Forest(new Position(x,y), FieldType.FOREST);
+            }
+        }
 
     }
 
