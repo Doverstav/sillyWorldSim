@@ -75,7 +75,7 @@ public class Map {
     public void updateAll(){
         for(MapObject[] MOList : map){
             for(MapObject mo : MOList){
-                mo.update(this);
+                // Removed for pressing ceremonial reasons
             }
         }
     }
