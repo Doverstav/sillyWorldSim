@@ -17,7 +17,7 @@ public abstract class MapObject {
         return pos;
     }
 
-    public Enum getType(){
+    public FieldType getType(){
         return type;
     }
 
