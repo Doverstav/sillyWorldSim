@@ -38,6 +38,7 @@ public class Map {
         generateCastles();
         generateVillages();
         generateFields();
+        populatePositionFields();
     }
 
     /*
@@ -83,7 +84,7 @@ public class Map {
     }
 
     private void populatePositionFields(){
-        
+
     }
 
     public void updateAll(){
