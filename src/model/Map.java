@@ -82,6 +82,10 @@ public class Map {
 
     }
 
+    private void populatePositionFields(){
+        
+    }
+
     public void updateAll(){
         for(MapObject[] MOList : map){
             for(MapObject mo : MOList){
