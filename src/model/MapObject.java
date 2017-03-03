@@ -21,6 +21,4 @@ public abstract class MapObject {
         return type;
     }
 
-    public void update(){};
-
 }
