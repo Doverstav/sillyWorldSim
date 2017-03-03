@@ -1,11 +1,20 @@
 package model;
 
+import javafx.geometry.Pos;
+
 /**
  * Created by dover on 2017-03-03.
  */
 public class Map {
 
     MapObject[][] map;
+    Position[] waterTiles;
+    Position[] mountainTiles;
+    Position[] castleTiles;
+    Position[] villageTiles;
+    Position[] FiledTiles;
+    Position[] ForestTiles;
+
 
     public Map(int x, int y){
         map = new MapObject[x][y];
