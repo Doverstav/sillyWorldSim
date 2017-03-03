@@ -2,12 +2,18 @@ package model;
 
 import javafx.geometry.Pos;
 
+import java.util.Random;
+
 /**
  * Created by dover on 2017-03-03.
  */
 public class Map {
 
+    long seed;
+    Random r;
+
     MapObject[][] map;
+
     Position[] waterTiles;
     Position[] mountainTiles;
     Position[] castleTiles;
@@ -17,6 +23,10 @@ public class Map {
 
 
     public Map(int x, int y){
+        // Get seed and set it
+        seed = System.currentTimeMillis();
+        r = new Random(seed);
+
         map = new MapObject[x][y];
         generateMap();
     }
