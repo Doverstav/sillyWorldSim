@@ -6,9 +6,9 @@ package model;
 public abstract class MapObject {
 
     private Position pos;
-    private Enum type;
+    private FieldType type;
 
-    public MapObject(Position p, Enum t){
+    public MapObject(Position p, FieldType t){
         pos = p;
         type = t;
     }
