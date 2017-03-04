@@ -26,7 +26,8 @@ public class Map {
 
     public Map(int x, int y){
         // Get seed and set it
-        seed = System.currentTimeMillis();
+        Random seeder = new Random();
+        seed = seeder.nextLong();
         r = new Random(seed);
 
         map = new MapObject[x][y];
