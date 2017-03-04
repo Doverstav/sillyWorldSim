@@ -30,6 +30,14 @@ public class Map {
         seed = seeder.nextLong();
         r = new Random(seed);
 
+        // Initialize position arrays
+        waterTiles = new ArrayList<>();
+        mountainTiles = new ArrayList<>();
+        castleTiles = new ArrayList<>();
+        villageTiles = new ArrayList<>();
+        fieldTiles = new ArrayList<>();
+        forestTiles = new ArrayList<>();
+
         map = new MapObject[x][y];
         generateMap();
     }
