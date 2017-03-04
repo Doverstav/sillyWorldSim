@@ -123,4 +123,31 @@ public class Map {
         }
     }
 
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        for(MapObject[] MOList : map){
+            for(MapObject mo : MOList){
+                FieldType ft = mo.getType();
+                if(ft == FieldType.CASTLE){
+                    sb.append("C");
+                } else if(ft == FieldType.VILLAGE){
+                    sb.append("V");
+                } else if(ft == FieldType.FIELD){
+                    sb.append("P");
+                } else if(ft == FieldType.FOREST){
+                    sb.append("F");
+                } else if(ft == FieldType.MOUNTAIN){
+                    sb.append("M");
+                } else if(ft == FieldType.WATER){
+                    sb.append("W");
+                } else {
+                    throw new Error("Unexpected FieldType" + ft);
+                }
+            }
+            sb.append("\n");
+        }
+
+        return sb.toString();
+    }
+
 }
