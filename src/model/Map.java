@@ -17,6 +17,8 @@ public class Map {
     private int numberOfVillages;
     private int numberOfCastles;
 
+    private int x;
+    private int y;
     private MapObject[][] map;
 
     private ArrayList<Position> waterTiles;
@@ -47,6 +49,9 @@ public class Map {
         numberOfCastles = 1;
         numberOfVillages = 10;
 
+        // Save size of map
+        this.x = x;
+        this.y = y;
         map = new MapObject[x][y];
         generateMap();
     }
@@ -91,6 +96,18 @@ public class Map {
     Place villages
      */
     private void generateVillages(){
+
+        for(int i = 0; i < numberOfVillages; i++){
+            int x = r.nextInt(this.x);
+            int y = r.nextInt(this.y);
+
+            // Don't place village on other village or castle
+            if(map[x][y].getType() != FieldType.VILLAGE && map[x][y].getType() != FieldType.CASTLE){
+                map[x][y] = new Village(new Position(x,y), FieldType.VILLAGE);
+            } else {
+                i--;
+            }
+        }
 
     }
 
