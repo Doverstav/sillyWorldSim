@@ -118,6 +118,8 @@ public class Map {
                     mountainTiles.add(p);
                 } else if(ft == FieldType.WATER){
                     waterTiles.add(p);
+                } else if(ft == FieldType.ROAD){
+                    roadTiles.add(p);
                 } else {
                     throw new Error("Unexpected FieldType" + ft);
                 }
