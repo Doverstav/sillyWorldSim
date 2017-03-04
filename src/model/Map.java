@@ -14,6 +14,9 @@ public class Map {
     private long seed;
     private Random r;
 
+    private int numberOfVillages;
+    private int numberOfCastles;
+
     private MapObject[][] map;
 
     private ArrayList<Position> waterTiles;
@@ -39,6 +42,10 @@ public class Map {
         fieldTiles = new ArrayList<>();
         forestTiles = new ArrayList<>();
         roadTiles = new ArrayList<>();
+
+        // Default values
+        numberOfCastles = 1;
+        numberOfVillages = 10;
 
         map = new MapObject[x][y];
         generateMap();
