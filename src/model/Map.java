@@ -22,6 +22,7 @@ public class Map {
     private ArrayList<Position> villageTiles;
     private ArrayList<Position> fieldTiles;
     private ArrayList<Position> forestTiles;
+    private ArrayList<Position> roadTiles;
 
 
     public Map(int x, int y){
@@ -37,6 +38,7 @@ public class Map {
         villageTiles = new ArrayList<>();
         fieldTiles = new ArrayList<>();
         forestTiles = new ArrayList<>();
+        roadTiles = new ArrayList<>();
 
         map = new MapObject[x][y];
         generateMap();
