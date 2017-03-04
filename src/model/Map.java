@@ -148,6 +148,8 @@ public class Map {
                     sb.append("M");
                 } else if(ft == FieldType.WATER){
                     sb.append("W");
+                } else if(ft == FieldType.ROAD){
+                    sb.append("*");
                 } else {
                     throw new Error("Unexpected FieldType" + ft);
                 }
