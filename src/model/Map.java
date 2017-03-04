@@ -11,17 +11,17 @@ import java.util.Random;
  */
 public class Map {
 
-    long seed;
-    Random r;
+    private long seed;
+    private Random r;
 
-    MapObject[][] map;
+    private MapObject[][] map;
 
-    ArrayList<Position> waterTiles;
-    ArrayList<Position> mountainTiles;
-    ArrayList<Position> castleTiles;
-    ArrayList<Position> villageTiles;
-    ArrayList<Position> fieldTiles;
-    ArrayList<Position> forestTiles;
+    private ArrayList<Position> waterTiles;
+    private ArrayList<Position> mountainTiles;
+    private ArrayList<Position> castleTiles;
+    private ArrayList<Position> villageTiles;
+    private ArrayList<Position> fieldTiles;
+    private ArrayList<Position> forestTiles;
 
 
     public Map(int x, int y){
