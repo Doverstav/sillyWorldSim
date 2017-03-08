@@ -24,6 +24,9 @@ public class Map {
     private int waterDist;
     private int mountainDist;
 
+    private int waterIterations;
+    private int mountainIterations;
+
     private ArrayList<Position> waterTiles;
     private ArrayList<Position> mountainTiles;
     private ArrayList<Position> castleTiles;
@@ -53,6 +56,8 @@ public class Map {
         numberOfVillages = 10;
         waterDist = 25;
         mountainDist = 25;
+        waterIterations = 5;
+        mountainIterations = 5;
 
         // Save size of map
         this.x = x;
