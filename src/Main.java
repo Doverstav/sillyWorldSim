@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args){
         System.out.println("Hello world!");
-        Map m = new Map(10,100);
+        Map m = new Map(10,10);
         System.out.println(m.toString());
     }
 }
