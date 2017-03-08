@@ -116,6 +116,18 @@ public class Map {
      */
     private void generateCastles(){
 
+        for(int i = 0; i < numberOfCastles; i++){
+            int x = r.nextInt(this.x);
+            int y = r.nextInt(this.y);
+
+            // Don't place castle on another castle
+            if(map[x][y].getType() != FieldType.CASTLE){
+                map[x][y] = new Castle(new Position(x,y), FieldType.CASTLE);
+            } else {
+                i--;
+            }
+        }
+
     }
 
     /*
