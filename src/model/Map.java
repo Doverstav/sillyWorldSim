@@ -21,6 +21,9 @@ public class Map {
     private int y;
     private MapObject[][] map;
 
+    private int waterDist;
+    private int mountainDist;
+
     private ArrayList<Position> waterTiles;
     private ArrayList<Position> mountainTiles;
     private ArrayList<Position> castleTiles;
@@ -48,6 +51,8 @@ public class Map {
         // Default values
         numberOfCastles = 1;
         numberOfVillages = 10;
+        waterDist = 25;
+        mountainDist = 25;
 
         // Save size of map
         this.x = x;
@@ -135,6 +140,23 @@ public class Map {
      */
     private void generateFields(){
 
+    }
+
+    /*
+    Seed the map with lakes according to the specified distribution.
+
+    Distribution is given as percentage, i.e. 0 - 100.
+     */
+    private void seedWithLakes(int dist){
+        for(int i = 0; i < this.x; i++){
+            for(int j = 0; j < this.y; j++){
+                // If random number is less than dist, we add a
+                // a field of the specified type
+                if(r.nextInt(101) < dist){
+                    map[i][j] = new Water(new Position(i,j), FieldType.WATER);
+                }
+            }
+        }
     }
 
     private void populatePositionFields(){
