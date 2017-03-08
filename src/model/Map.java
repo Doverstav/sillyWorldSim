@@ -188,7 +188,9 @@ public class Map {
             for(int y = startY; y <= endY; y++){
                 // Do not count center tile
                 if(x != p.getX() && y != p.getY()){
-
+                    if(!isOutOfBounds(x,y) && map[x][y].getType() == toCheck){
+                        instances++;
+                    }
                 }
             }
         }
@@ -197,7 +199,7 @@ public class Map {
     }
 
     private boolean isOutOfBounds(int x, int y){
-        return x >= 0 && x < this.x && y >= 0 && y < this.y;
+        return !(x >= 0 && x < this.x && y >= 0 && y < this.y);
     }
 
     private void populatePositionFields(){
