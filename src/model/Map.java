@@ -87,7 +87,7 @@ public class Map {
     Place water
      */
     private void generateWater(){
-
+        seedWithLakes(waterDist);
     }
 
     /*
