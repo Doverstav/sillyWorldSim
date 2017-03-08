@@ -176,6 +176,10 @@ public class Map {
         }
     }
 
+    private void iterateMapOnType(FieldType ft, int iterations){
+
+    }
+
     private int checkAdjacentTiles(Position p, int xRange, int yRange, FieldType toCheck){
         int startX = p.getX() - xRange;
         int startY = p.getY() - yRange;
