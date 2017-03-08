@@ -94,7 +94,7 @@ public class Map {
     Place mountains
      */
     private void generateMountains(){
-
+        seedWithMountains(mountainDist);
     }
 
     /*
@@ -174,6 +174,25 @@ public class Map {
                 }
             }
         }
+    }
+
+    private int checkAdjacentTiles(Position p, int xRange, int yRange, FieldType toCheck){
+        int startX = p.getX() - xRange;
+        int startY = p.getY() - yRange;
+        int endX = p.getX() - xRange;
+        int endY = p.getY() - yRange;
+
+        int instances = 0;
+
+        for(int x = startX; x <= endX; x++){
+            for(int y = startY; y <= endY; y++){
+                if(x != p.getX() && y != p.getY()){
+
+                }
+            }
+        }
+
+        return instances;
     }
 
     private void populatePositionFields(){
