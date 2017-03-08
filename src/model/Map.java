@@ -159,6 +159,23 @@ public class Map {
         }
     }
 
+    /*
+    Seed the map with mountains according to the specified distribution.
+
+    Distribution is given as percentage, i.e. 0 - 100.
+     */
+    private void seedWithMountains(int dist){
+        for(int i = 0; i < this.x; i++){
+            for(int j = 0; j < this.y; j++){
+                // If random number is less than dist, we add a
+                // a field of the specified type
+                if(r.nextInt(101) < dist){
+                    map[i][j] = new Mountain(new Position(i,j), FieldType.MOUNTAIN);
+                }
+            }
+        }
+    }
+
     private void populatePositionFields(){
         for(MapObject[] MOList : map){
             for(MapObject mo : MOList){
