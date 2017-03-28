@@ -181,16 +181,16 @@ public class Map {
         }
     }
 
-    private void iterateMapOnType(FieldType ft, int iterations){
+    private void iterateWaterMap(int iterations){
         MapObject[][] clone = (MapObject[][]) this.clone();
 
         for(int iter = 0; iter < iterations; iter++) {
 
             for (int i = 0; i < x; i++) {
                 for (int j = 0; j < y; j++) {
-                    int adjTiles = checkAdjacentTiles(new Position(i, j), 1, 1, ft);
+                    int adjTiles = checkAdjacentTiles(new Position(i, j), 1, 1, FieldType.WATER);
 
-                    if (map[i][j].getType() == ft) {
+                    if (map[i][j].getType() == FieldType.WATER) {
                         if (adjTiles >= 4) {
                             clone[i][j] = new Water(new Position(i, j), FieldType.WATER);
                         }
