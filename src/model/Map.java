@@ -93,6 +93,7 @@ public class Map {
      */
     private void generateWater(){
         seedWithLakes(waterDist);
+        iterateWaterMap(waterIterations);
     }
 
     /*
@@ -100,6 +101,7 @@ public class Map {
      */
     private void generateMountains(){
         seedWithMountains(mountainDist);
+        iterateMountainMap(mountainIterations);
     }
 
     /*
@@ -110,7 +112,6 @@ public class Map {
         for(int i = 0; i < numberOfVillages; i++){
             int x = r.nextInt(this.x);
             int y = r.nextInt(this.y);
-
             // Don't place village on other village or castle
             if(map[x][y].getType() != FieldType.VILLAGE && map[x][y].getType() != FieldType.CASTLE){
                 map[x][y] = new Village(new Position(x,y), FieldType.VILLAGE);
@@ -200,6 +201,34 @@ public class Map {
                     } else {
                         if (adjTiles >= 5) {
                             clone[i][j] = new Water(new Position(i, j), FieldType.WATER);
+                        }
+                    }
+                }
+            }
+
+            map = clone.clone();
+        }
+    }
+
+    private void iterateMountainMap(int iterations){
+        MapObject[][] clone = (MapObject[][]) this.clone();
+
+        for(int iter = 0; iter < iterations; iter++) {
+
+            for (int i = 0; i < x; i++) {
+                for (int j = 0; j < y; j++) {
+                    int adjTiles = checkAdjacentTiles(new Position(i, j), 1, 1, FieldType.MOUNTAIN);
+
+                    if (map[i][j].getType() == FieldType.MOUNTAIN) {
+                        if (adjTiles >= 4) {
+                            clone[i][j] = new Mountain(new Position(i, j), FieldType.MOUNTAIN);
+                        }
+                        if (adjTiles < 2) {
+                            clone[i][j] = new Forest(new Position(i, j), FieldType.FOREST);
+                        }
+                    } else {
+                        if (adjTiles >= 5) {
+                            clone[i][j] = new Mountain(new Position(i, j), FieldType.MOUNTAIN);
                         }
                     }
                 }
