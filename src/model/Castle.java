@@ -9,4 +9,8 @@ public class Castle extends MapObject {
         super(p,t);
     }
 
+    public Object clone(){
+        return new Castle(getPosition(), getType());
+    }
+
 }

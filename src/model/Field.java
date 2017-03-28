@@ -8,4 +8,8 @@ public class Field extends MapObject {
     public Field(Position p, FieldType t){
         super(p,t);
     }
+
+    public Object clone(){
+        return new Field(getPosition(), getType());
+    }
 }

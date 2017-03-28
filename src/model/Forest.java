@@ -8,4 +8,8 @@ public class Forest extends MapObject {
     public Forest(Position p, FieldType t){
         super(p,t);
     }
+
+    public Object clone(){
+        return new Forest(getPosition(), getType());
+    }
 }
