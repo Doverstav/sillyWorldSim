@@ -299,7 +299,15 @@ public class Map {
     }
 
     public Object clone(){
-        return null;
+        MapObject[][] clone = new MapObject[x][y];
+
+        for(int i = 0; i < x; i++){
+            for(int j = 0; j < y; j++){
+                clone[i][j] = (MapObject) map[i][j].clone();
+            }
+        }
+
+        return clone;
     }
 
 }
