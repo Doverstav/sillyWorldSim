@@ -21,4 +21,6 @@ public abstract class MapObject {
         return type;
     }
 
+    public abstract Object clone();
+
 }
