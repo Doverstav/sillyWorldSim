@@ -73,6 +73,7 @@ public class Map {
         generateCastles();
         generateVillages();
         generateFields();
+        generateRoads();
         populatePositionFields();
     }
 
@@ -148,6 +149,10 @@ public class Map {
 
     }
 
+    private void generateRoads(){
+
+    }
+
     /*
     Seed the map with lakes according to the specified distribution.
 
@@ -182,6 +187,9 @@ public class Map {
         }
     }
 
+    /*
+    Iterate the map to create a nicely looking landscape. This method iterates only on water tiles
+     */
     private void iterateWaterMap(int iterations){
         MapObject[][] clone = (MapObject[][]) this.clone();
 
@@ -210,6 +218,9 @@ public class Map {
         }
     }
 
+    /*
+  Iterate the map to create a nicely looking landscape. This method iterates only on mountain tiles
+   */
     private void iterateMountainMap(int iterations){
         MapObject[][] clone = (MapObject[][]) this.clone();
 
